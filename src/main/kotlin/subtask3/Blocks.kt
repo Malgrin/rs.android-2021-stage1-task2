@@ -33,6 +33,7 @@ Output: blockC: Any - результат, согласно условиям оп
 * */
 
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlin.reflect.KClass
 
 class Blocks {
@@ -50,13 +51,26 @@ class Blocks {
                     s += blockA.filterIsInstance<String>()[i]
                 }
                 println(s)
+
                 return s
             }
             LocalDate::class -> {
+                val s = mutableListOf<LocalDate>()
+                for (i in blockA.filterIsInstance<LocalDate>().indices) {
+                    s.add(blockA.filterIsInstance<LocalDate>()[i])
+                }
 
+                println(s.max())
+                val date1 = LocalDate.parse(s.max().toString())
+                val day = date1.dayOfMonth
+                val month = date1.monthValue
+                val year = date1.year
+                println("$day.$month.$year")
+                return "$day.$month.$year"
             }
             else -> "error"
         }
-        //throw NotImplementedError("Not implemented")
+
+
     }
 }
