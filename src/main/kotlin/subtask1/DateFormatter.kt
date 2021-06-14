@@ -40,10 +40,10 @@ class DateFormatter {
             dayWeek = transDay(date.dayOfWeek.toString())
 
         } catch (e: DateTimeException) {
-            println("Такого дня не существует")
+            //println("Такого дня не существует")
             return "Такого дня не существует"
         }
-        println("$day $monthText, $dayWeek")
+        //println("$day $monthText, $dayWeek")
         return "$day $monthText, $dayWeek"
     }
 

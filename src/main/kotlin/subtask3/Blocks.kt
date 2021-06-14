@@ -42,7 +42,7 @@ class Blocks {
     fun getData(blockA: Array<*>, blockB: KClass<*>): Any {
         return when (blockB) {
             Int::class -> {
-                println(blockA.filterIsInstance<Int>().sum())
+                //println(blockA.filterIsInstance<Int>().sum())
                 return blockA.filterIsInstance<Int>().sum()
             }
             String::class -> {
@@ -50,7 +50,6 @@ class Blocks {
                 for (i in blockA.filterIsInstance<String>().indices) {
                     s += blockA.filterIsInstance<String>()[i]
                 }
-                println(s)
 
                 return s
             }
@@ -60,12 +59,12 @@ class Blocks {
                     s.add(blockA.filterIsInstance<LocalDate>()[i])
                 }
 
-                println(s.max())
+                //println(s.max())
                 val date1 = LocalDate.parse(s.max().toString())
                 val day = date1.dayOfMonth
                 val month = date1.monthValue
                 val year = date1.year
-                println("$day.$month.$year")
+                //println("$day.$month.$year")
                 return "$day.$month.$year"
             }
             else -> "error"

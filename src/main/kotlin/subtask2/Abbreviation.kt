@@ -54,15 +54,15 @@ class Abbreviation {
                 bString += aString[j]
         }
 
-        print("a = $a ")
+        /*print("a = $a ")      //Вывод строк
         print("b = $b ")
         print(" A = $aString ")
-        println(" B = $bString ")
+        println(" B = $bString ")*/
         if (bString == b) {
-            println("YES")
+            //println("YES")
             return "YES"
         }   else {
-            println("NO")
+            //println("NO")
             return "NO"
         }
 
